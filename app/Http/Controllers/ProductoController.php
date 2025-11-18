@@ -15,15 +15,16 @@ class ProductoController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+       $validator = $request->validate([
             'codigo' => 'required',
             'nombre' => 'required',
             'precio' => 'required|numeric',
             'stock'  => 'required|integer'
         ]);
 
-        Producto::create($request->only('codigo', 'nombre', 'precio', 'stock'));
+        $producto = Producto::create($request->only('codigo', 'nombre', 'precio', 'stock'));
 
+        dd($producto);
         return back()->with('ok', 'Producto creado correctamente');
     }
 

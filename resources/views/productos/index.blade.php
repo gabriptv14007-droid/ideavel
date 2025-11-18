@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="text-xl font-semibold">Productos</h2>
+        <h2 class=" text-white text-xl font-semibold">Productos</h2>
     </x-slot>
 
     <div class="p-6">
@@ -27,21 +27,21 @@
         <table class="w-full border text-left">
             <thead class="bg-gray-200">
                 <tr>
-                    <th class="p-2">Código</th>
-                    <th class="p-2">Nombre</th>
-                    <th class="p-2">Precio</th>
-                    <th class="p-2">Stock</th>
-                    <th class="p-2"></th>
+                    <th class="p-2 text-white">Código</th>
+                    <th class="p-2 text-white">Nombre</th>
+                    <th class="p-2 text-white">Precio</th>
+                    <th class="p-2 text-white">Stock</th>
+                    <th class="p-2 text-white"></th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($productos as $producto)
                     <tr class="border-b">
-                        <td class="p-2">{{ $producto->codigo }}</td>
-                        <td class="p-2">{{ $producto->nombre }}</td>
-                        <td class="p-2">{{ $producto->precio }} €</td>
-                        <td class="p-2">{{ $producto->stock }}</td>
-                        <td class="p-2">
+                        <td class="p-2 text-white">{{ $producto->codigo }}</td>
+                        <td class="p-2 text-white">{{ $producto->nombre }}</td>
+                        <td class="p-2 text-white">{{ $producto->precio }} €</td>
+                        <td class="p-2 text-white">{{ $producto->stock }}</td>
+                        <td class="p-2 text-white">
                             <form method="POST" action="{{ route('productos.destroy', $producto) }}">
                                 @csrf
                                 @method('DELETE')

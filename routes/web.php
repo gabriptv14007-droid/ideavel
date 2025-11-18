@@ -33,6 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::post('/productos', [ProductoController::class, 'store'])->name('productos.store');
 });
 
 require __DIR__.'/auth.php';
@@ -53,5 +54,4 @@ Route::post('/maquina/comprar', [MaquinaController::class, 'comprar'])->name('ma
 
 // productos
 Route::get('/productos', [ProductoController::class, 'index'])->name('productos.index');
-Route::post('/productos', [ProductoController::class, 'store'])->name('productos.store');
 Route::delete('/productos/{producto}', [ProductoController::class, 'destroy'])->name('productos.destroy');
