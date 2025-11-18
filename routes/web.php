@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IdeaController;
 use App\Http\Controllers\MaquinaController;
+use App\Http\Controllers\ProductoController;
 
 
 /*
@@ -49,3 +50,8 @@ Route::put('/ideas/{idea}', [IdeaController::class, 'synchronizeLike'])->name('i
 // maquina expendedora
 Route::get('/maquina', [MaquinaController::class, 'index'])->name('maquina');
 Route::post('/maquina/comprar', [MaquinaController::class, 'comprar'])->name('maquina.comprar');
+
+// productos
+Route::get('/productos', [ProductoController::class, 'index'])->name('productos.index');
+Route::post('/productos', [ProductoController::class, 'store'])->name('productos.store');
+Route::delete('/productos/{producto}', [ProductoController::class, 'destroy'])->name('productos.destroy');
